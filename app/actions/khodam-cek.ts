@@ -14,7 +14,7 @@ export const actionKhodamCheck = async (prevState: any, formData: FormData) => {
                 khodamName: "",
                 khodamIcon: "",
             };
-        const file = await readFileSync(process.cwd() + "/assets/khodam.txt", "utf-8");
+        const file = await readFileSync(path.join(process.cwd(), process.env.NODE_ENV === 'production' ? 'static' : 'public',  "assets/khodam.txt"), "utf-8");
         const lines = file.split("\n");
         var rng = seedrandom(rawFormData.nama.trim());
 
