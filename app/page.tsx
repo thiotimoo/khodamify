@@ -2,7 +2,12 @@
 import { Twemoji } from "react-emoji-render";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Plus, Sparkle, StarFour } from "@phosphor-icons/react/dist/ssr";
+import {
+    MagicWand,
+    Plus,
+    Sparkle,
+    StarFour,
+} from "@phosphor-icons/react/dist/ssr";
 import { useFormState, useFormStatus } from "react-dom";
 import { actionKhodamCheck } from "./actions/khodam-cek";
 import { useEffect, useState } from "react";
@@ -31,7 +36,8 @@ export default function Home() {
 
 function HeaderSection() {
     return (
-        <div className="text-start w-full max-w-screen-sm py-6">
+        <div className="text-start w-full max-w-screen-sm pt-16">
+            <MagicWand className="text-4xl text-purple-300" weight="duotone" />
             <h1 className="text-6xl font-black">Khodam-ify</h1>
             <span className="text-2xl font-normal">Cek khodam kamu!</span>
         </div>
@@ -55,25 +61,24 @@ function FormSection() {
         >
             <AnimatePresence mode="wait">
                 {khodamIcon && khodamName && (
-                    
-                        <motion.div
-                            key={state.khodamName}
-                            initial={{ opacity: 0, x: 200 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: 200 }}
-                            className="border flex flex-col items-center gap-2 p-4 relative bg-black/20 backdrop-blur-sm "
-                        >
-                            <Plus className="absolute -left-3 -top-3 w-6 h-6" />
-                            <Plus className="absolute -left-3 -bottom-3 w-6 h-6" />
-                            <Plus className="absolute -right-3 -top-3 w-6 h-6" />
-                            <Plus className="absolute -right-3 -bottom-3 w-6 h-6" />
+                    <motion.div
+                        key={state.khodamName}
+                        initial={{ opacity: 0, x: 200 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 200 }}
+                        className="border flex flex-col items-center gap-2 p-4 relative bg-black/20 backdrop-blur-sm "
+                    >
+                        <Plus className="absolute -left-3 -top-3 w-6 h-6" />
+                        <Plus className="absolute -left-3 -bottom-3 w-6 h-6" />
+                        <Plus className="absolute -right-3 -top-3 w-6 h-6" />
+                        <Plus className="absolute -right-3 -bottom-3 w-6 h-6" />
 
-                            <span className=" font-normal">
-                                Khodam kamu adalah:
-                            </span>
-                            <Twemoji className="text-6xl">{khodamIcon}</Twemoji>
-                            <span className="font-semibold">{khodamName}</span>
-                        </motion.div>
+                        <span className=" font-normal">
+                            Khodam kamu adalah:
+                        </span>
+                        <Twemoji className="text-6xl">{khodamIcon}</Twemoji>
+                        <span className="font-semibold">{khodamName}</span>
+                    </motion.div>
                 )}
             </AnimatePresence>
             <Input
@@ -91,7 +96,7 @@ function FormSection() {
                 className="text-lg py-6 flex flex-row items-center justify-center gap-2 rounded-xl"
                 disabled={pending}
             >
-                <Sparkle />
+                <Sparkle weight="fill" />
                 Cek Khodam
             </MotionButton>
         </form>
