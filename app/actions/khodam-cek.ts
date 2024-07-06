@@ -1,7 +1,5 @@
 "use server";
 
-import { readFileSync } from "fs";
-import path from "path";
 import seedrandom from "seedrandom";
 
 export const actionKhodamCheck = async (prevState: any, formData: FormData) => {
