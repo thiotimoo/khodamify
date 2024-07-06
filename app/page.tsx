@@ -77,7 +77,7 @@ function FormSection() {
                             Khodam kamu adalah:
                         </span>
                         <Twemoji className="text-6xl">{khodamIcon}</Twemoji>
-                        <span className="font-semibold">{khodamName}</span>
+                        <span className="font-semibold text-2xl">{khodamName}</span>
                     </motion.div>
                 )}
             </AnimatePresence>
