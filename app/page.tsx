@@ -77,28 +77,32 @@ function FormSection() {
                             Khodam kamu adalah:
                         </span>
                         <Twemoji className="text-6xl">{khodamIcon}</Twemoji>
-                        <span className="font-semibold text-2xl">{khodamName}</span>
+                        <span className="font-semibold text-2xl">
+                            {khodamName}
+                        </span>
                     </motion.div>
                 )}
             </AnimatePresence>
-            <Input
-                type="name"
-                name="nama"
-                placeholder="Nama kamu"
-                className="text-xl py-8 px-4 rounded-xl bg-black/20 backdrop-blur-sm"
-                disabled={pending}
-            />
-            <MotionButton
-                whileHover={{
-                    scale: 1.1,
-                }}
-                whileTap={{ scale: 0.9 }}
-                className="text-lg py-6 flex flex-row items-center justify-center gap-2 rounded-xl"
-                disabled={pending}
-            >
-                <Sparkle weight="fill" />
-                Cek Khodam
-            </MotionButton>
+            <div className="bg-white text-black p-2 rounded-2xl flex flex-col gap-2">
+                <Input
+                    type="name"
+                    name="nama"
+                    placeholder="Nama kamu"
+                    className="text-xl py-8 px-4 rounded-xl  backdrop-blur-sm"
+                    disabled={pending}
+                />
+                <MotionButton
+                    whileHover={{
+                        scale: 1.1,
+                    }}
+                    whileTap={{ scale: 0.9 }}
+                    className="text-lg py-6 flex flex-row items-center justify-center gap-2 rounded-xl bg-black text-white hover:bg-gray-800 w-full "
+                    disabled={pending}
+                >
+                    <Sparkle weight="fill" />
+                    Cek Khodam
+                </MotionButton>
+            </div>
         </form>
     );
 }
