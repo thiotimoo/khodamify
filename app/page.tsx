@@ -38,7 +38,7 @@ function HeaderSection() {
     return (
         <div className="text-start w-full max-w-screen-sm pt-16">
             <MagicWand className="text-4xl text-purple-300" weight="duotone" />
-            <h1 className="text-6xl font-black">Khodam-ify</h1>
+            <h1 className="text-6xl font-black text-purple-300">Khodam-ify</h1>
             <span className="text-2xl font-normal">Cek khodam kamu!</span>
         </div>
     );
