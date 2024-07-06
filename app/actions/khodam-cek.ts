@@ -1,0 +1,22 @@
+"use server";
+
+import { readFileSync } from "fs";
+import path from "path";
+import seedrandom from "seedrandom";
+
+export const actionKhodamCheck = async (prevState: any, formData: FormData) => {
+    const rawFormData = {
+        nama: formData.get("nama") as string,
+    };
+    const filePath = path.resolve("./public", "assets", "khodam.txt");
+    const file = await readFileSync(filePath, "utf-8");
+    const lines = file.split("\n");
+    var rng = seedrandom(rawFormData.nama.trim());
+
+    const randLineNum = Math.floor(rng() * lines.length);
+    const splitted = lines[randLineNum].split(" ");
+    return {
+        khodamName: lines[randLineNum].substring(splitted[0].length),
+        khodamIcon: splitted[0],
+    };
+};
